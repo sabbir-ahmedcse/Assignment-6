@@ -25,6 +25,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
+    <link rel="shortcut icon" href="./assets/about.png" type="image/x-icon">
 </head>
 
 <body>
@@ -58,31 +60,83 @@
         </div>
     </header>
 
-    <section class="bg-[#cff0dc]">
-
-        <div class="flex justify-around items-center">
-            <div class="left">
-                <img src="./assets/hero-leaf1.png" alt="" class="w-[80%]">
-            </div>
-            <div class="text-center space-y-3">
-                <h2 class=" text-2xl font-bold">Plant a Tree, Grow a Future</h2>
-                <p class="text-[#717274] ">Join our mission to plant 1 million trees and make the Earth greener for future
-                    generations.</p>
-                <button class="mx-10 rounded-4xl px-2 py-1 font-bold text-white bg-[#facc15]">Plant a Tree</button>
 
 
+    <section class="banner mt-[1px] bg-[#cff0dc] ">
+        <div class="flex flex-col md:flex-row justify-around items-center gap-6 md:gap-0">
+
+            <!-- Left Image -->
+            <div class="left w-[60%] md:w-[30%] flex justify-center">
+                <img src="./assets/hero-leaf1.png" alt="" class="w-full max-w-[250px]">
             </div>
-            <div class="right">
-                <img src="./assets/hero-leaf2.png" alt="" class="w-[80%]">
+
+            <!-- Center Text -->
+            <div class="text-center space-y-3 px-4 md:w-[40%]">
+                <h2 class="text-xl md:text-3xl font-bold">
+                    Plant a Tree, Grow a Future
+                </h2>
+                <p class="text-[#717274] text-sm md:text-base">
+                    Join our mission to plant 1 million trees and make the Earth greener for future generations.
+                </p>
+                <button class="rounded-3xl px-4 py-2 font-bold text-white bg-[#facc15] hover:bg-yellow-400 transition">
+                    Plant a Tree
+                </button>
             </div>
+
+            <!-- Right Image -->
+            <div class="right w-[60%] md:w-[30%] flex justify-center">
+                <img src="./assets/hero-leaf2.png" alt="" class="w-full max-w-[250px]">
+            </div>
+
         </div>
     </section>
 
-    <section class="mt-20">
+
+    <section class="mt-10">
         <h2 class="text-2xl text-center ">Choose Your Trees</h2>
     </section>
 
-    <section></section>
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4 mt-4 w-11/12 mx-auto bg-[#f0fdf4]">
+
+        <aside id="categories" class="w-full text-center md:col-span-1 bg-white p-4 rounded-xl shadow space-y-2 h-fit ">
+
+
+
+
+        </aside>
+
+        <!-- Main Product Grid -->
+        <main id="card-container" class="h-100% md:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
+
+
+
+        </main>
+
+        <!-- Right Sidebar (Cart) -->
+        <aside class="w-full md:col-span-1 bg-white p-4 rounded-xl shadow h-fit">
+
+            <div id="cart-list" class=" space-y-3">
+             </div>
+             <div id="total-price" class="mt-5">
+               
+             </div>
+        </aside>
+
+    </div>
+
+
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle space-y-4">
+        <div class="modal-box " id="modal-category">
+
+        </div>
+        </div>
+    </dialog>
+
+
+    <script src="script/script.js"></script>
 </body>
 
 </html>
