@@ -7,7 +7,7 @@ const loadPlants = () => {
 
 
         })
-     .finally(() => toggleSpinner(false));
+        .finally(() => toggleSpinner(false));
 }
 let totalPrice = 0;
 
@@ -49,16 +49,16 @@ const displayPlants = (datas) => {
                 </div>
                 <button class="remove"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-            `;   
+            `;
             cartList.appendChild(div);
 
 
-             totalPrice += element.price;
+            totalPrice += element.price;
             document.getElementById("total-price").innerHTML = `
                  <h2>Total: <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${totalPrice}</h2>
             `;
 
-        const removeBtn = div.querySelector(".remove");
+            const removeBtn = div.querySelector(".remove");
             removeBtn.addEventListener("click", () => {
                 // remove the element from DOM
                 div.remove();
@@ -115,10 +115,10 @@ const loadWordDetail = async (id) => {
 
 }
 
-const displayWordDetails=(word)=>{
+const displayWordDetails = (word) => {
     console.log(word)
-    const modalContainer=document.getElementById("modal-category")
-    modalContainer.innerHTML= `
+    const modalContainer = document.getElementById("modal-category")
+    modalContainer.innerHTML = `
                 
                 <h3 class="text-lg font-bold">${word.name}</h3>
                 <img src="${word.image}" alt="" class="h-40 w-full object-cover rounded-md">
@@ -143,16 +143,16 @@ const displayWordDetails=(word)=>{
 
 
 const toggleSpinner = (isLoading) => {
-  const spinner = document.getElementById("spinner");
-  const cardContainer = document.getElementById("card-container");
+    const spinner = document.getElementById("spinner");
+    const cardContainer = document.getElementById("card-container");
 
-  if (isLoading) {
-    spinner.classList.remove("hidden");
-    cardContainer.classList.add("hidden");
-  } else {
-    spinner.classList.add("hidden");
-    cardContainer.classList.remove("hidden");
-  }
+    if (isLoading) {
+        spinner.classList.remove("hidden");
+        cardContainer.classList.add("hidden");
+    } else {
+        spinner.classList.add("hidden");
+        cardContainer.classList.remove("hidden");
+    }
 };
 
 
