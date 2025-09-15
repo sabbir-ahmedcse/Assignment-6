@@ -1,5 +1,5 @@
 const loadPlants = () => {
-    // toggleSpinner(true);
+    toggleSpinner(true);
     fetch("https://openapi.programming-hero.com/api/plants")
         .then((res) => res.json())
         .then((data) => {
@@ -7,7 +7,7 @@ const loadPlants = () => {
 
 
         })
-    //  .finally(() => toggleSpinner(false));
+     .finally(() => toggleSpinner(false));
 }
 let totalPrice = 0;
 
@@ -142,6 +142,18 @@ const displayWordDetails=(word)=>{
 
 
 
+const toggleSpinner = (isLoading) => {
+  const spinner = document.getElementById("spinner");
+  const cardContainer = document.getElementById("card-container");
+
+  if (isLoading) {
+    spinner.classList.remove("hidden");
+    cardContainer.classList.add("hidden");
+  } else {
+    spinner.classList.add("hidden");
+    cardContainer.classList.remove("hidden");
+  }
+};
 
 
 loadCategories()

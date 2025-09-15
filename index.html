@@ -31,7 +31,7 @@
 
 <body>
 
-
+<!-- header section -->
     <header>
         <div class="navbar bg-green-700 shadow-sm ">
             <div class="navbar-start ">
@@ -60,8 +60,8 @@
         </div>
     </header>
 
-
-
+ 
+ <!-- banner section -->
     <section class="banner mt-[1px] bg-[#cff0dc] ">
         <div class="flex flex-col md:flex-row justify-around items-center gap-6 md:gap-0">
 
@@ -95,8 +95,13 @@
     <section class="mt-10">
         <h2 class="text-2xl text-center ">Choose Your Trees</h2>
     </section>
+    <div id="spinner" class="hidden flex justify-center items-center py-10">
+    <span class="loading loading-bars loading-xl"></span>
+   </div>
+   
 
-    <!-- <div class="grid grid-cols-1 md:grid-cols-6 gap-4 mt-4 w-11/12 mx-auto bg-[#f0fdf4]">
+   <!-- functionality section -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4 mt-4 w-11/12 mx-auto bg-[#f0fdf4]">
 
         <aside id="categories" class="w-full text-center md:col-span-1 bg-white p-4 rounded-xl shadow space-y-2 h-fit ">
 
@@ -122,12 +127,11 @@
              </div>
         </aside>
 
-    </div> -->
+    </div>
 
 
 
-    <!-- Open the modal using ID.showModal() method -->
-    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <!-- modal -->
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle space-y-4">
         <div class="modal-box " id="modal-category">
 
@@ -159,36 +163,74 @@
             </div>
         </div>
     </section>
+
+    <!-- Our Impact -->
+
+    <section class="bg-[#cff0dc] mt-15 ">
+
+
+
+        <h2 class="font-semibold text-[25px] text-center  py-10">Our Impact</h2>
+
+
+
+        <div class="w-10/12 mx-auto  flex flex-col md:flex-row justify-around  gap-4 ">
+            <div class="card bg-white shadow-md rounded-md py-8 space-y-1 w-70 mb-15">
+                <h2 class="text-4xl text-center text-green-400 font-semibold">500K+</h2>
+                <p class="text-center">Trees Planted</p>
+
+            </div>
+            <div class="card bg-white shadow-md rounded-md py-8 space-y-1  w-70 mb-15">
+                <h2 class="text-4xl text-center text-green-400 font-semibold">120+</h2>
+                <p class="text-center">Communities Involved</p>
+
+            </div>
+            <div class="card bg-white shadow-md rounded-md py-8 space-y-1  w-70 mb-15">
+                <h2 class="text-4xl text-center text-green-400 font-semibold">30+</h2>
+                <p class="text-center">Countries Reached</p>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- input section -->
+
+    <section class="bg-green-800 flex items-center justify-center min-h-screen mt-10">
+        <div class="bg-green-700 p-8 rounded-lg shadow-md w-full max-w-md">
+            <h2 class="text-white text-center text-xl font-semibold mb-6">Plant a Tree Today</h2>
+
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name"
+                    class="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+
+                <input type="email" placeholder="Your Email Address"
+                    class="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+
+                <select
+                    class="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-700">
+                    <option>Number of Trees</option>
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                </select>
+
+                <button type="submit"
+                    class="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 rounded-md transition duration-300">
+                    Donate Now
+                </button>
+            </form>
+        </div>
+
+
+    </section>
+
     
-<!-- Our Impact -->
 
-   <section class="bg-[#cff0dc] mt-15  ">
-
-
-  
-     <h2 class="font-semibold text-[25px] text-center  py-10">Our Impact</h2>
-
+     <!-- footer section -->
+    <footer class="text-center text-sm bg-green-900 p-3 text-white"> <h2> © 2025 Ersun Earth. All rights reserved.</h2></footer>     
    
-
-    <div class="w-10/12 mx-auto  flex flex-col md:flex-row justify-around  gap-4">
-        <div class="card bg-white shadow-md rounded-md py-8 space-y-1 w-70">
-            <h2 class="text-4xl text-center text-green-400 font-semibold">500K+</h2>
-            <p class="text-center">Trees Planted</p>
-       
-        </div>
-          <div class="card bg-white shadow-md rounded-md py-8 space-y-1  w-70">
-            <h2 class="text-4xl text-center text-green-400 font-semibold">120+</h2>
-            <p class="text-center">Communities Involved</p>
-       
-        </div>
-          <div class="card bg-white shadow-md rounded-md py-8 space-y-1  w-70">
-            <h2 class="text-4xl text-center text-green-400 font-semibold">30+</h2>
-            <p class="text-center">Countries Reached</p>
-       
-        </div>
-    </div>
-
-   </section>
 
 
 
