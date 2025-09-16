@@ -5,3 +5,8 @@
 .mts{
   margin-top: 10px;
 }
+
+.active{
+     background-color: #422AD5;
+     color: #FFFFFF;
+}

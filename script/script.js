@@ -17,13 +17,13 @@ const displayPlants = (datas) => {
     datas.forEach(element => {
         const cardBtn = document.createElement("div")
         cardBtn.innerHTML = `
-        <div class="card bg-base-100 p-2 space-y-4  shadow-md h-[520px]">
+        <div class="card bg-base-100 p-2 space-y-4  shadow-md w-full block">
                 <img src="${element.image}" class="h-40 w-full object-cover rounded-md"/>
                 <div class="  space-y-4">
                     <h2 class="card-title" onclick="loadWordDetail(${element.id})">${element.name}</h2>
-                    <p>${element.description}</p>
+                    <p class="text-justify tracking-normal">${element.description}</p>
                     <div class="flex justify-between items-center">
-                        <p class="bg-amber-50 p-2 rounded-2xl">${element.category}</p>
+                        <p class="bg-amber-50 p-2 rounded-2xl ">${element.category}</p>
                         <span><i class="fa-solid fa-bangladeshi-taka-sign"></i>${element.price}</span>
                     </div>
                     <div class="card-actions">
@@ -42,7 +42,7 @@ const displayPlants = (datas) => {
             const div = document.createElement("div");
             div.innerHTML = `
               
-                <div class="flex justify-between items-center p-2 shadow bg-amber-50  rounded-sm">
+                <div class="flex justify-between items-center p-2 shadow bg-amber-50  rounded-sm ">
                     <div>
                     <h2>${element.name}</h2>
                     <span><i class="fa-solid fa-bangladeshi-taka-sign"></i>${element.price}</span>
@@ -60,10 +60,8 @@ const displayPlants = (datas) => {
 
             const removeBtn = div.querySelector(".remove");
             removeBtn.addEventListener("click", () => {
-                // remove the element from DOM
                 div.remove();
 
-                // update total price
                 totalPrice -= element.price;
                 document.getElementById("total-price").innerHTML = `
                     <h2>Total: <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${totalPrice}</h2>
@@ -76,12 +74,22 @@ const displayPlants = (datas) => {
     });
 }
 
+const removeActive = () => {
+    document.querySelectorAll(".cursor-pointer").forEach(btn => {
+        btn.classList.remove("active")
+        console.log()
+    })
+    // for(let lessonBtn of lessonBtns){
+    //     lessonBtn.classList.remove("active")
+    // }
 
+}
 
 const loadCategories = () => {
     fetch("https://openapi.programming-hero.com/api/categories")
         .then((res) => res.json())
         .then((data) => {
+          
             displayCategories(data.categories)
 
         })
@@ -93,9 +101,13 @@ const displayCategories = (arr) => {
     arr.forEach(element => {
         const btn = document.createElement("p")
         btn.innerHTML = `
-                  <p class="px-3 py-1 rounded transition duration-300 font-semibold
-                  text-gray-700 hover:text-white hover:bg-blue-600">${element.category_name}</p>`
-
+                  <p id="lesson-btn-${element.id}" class="px-3 py-1 rounded transition duration-300 font-semibold
+                  text-gray-700 hover:text-white cursor-pointer
+                   hover:bg-blue-600">${element.category_name}</p>`;
+                
+         btn.addEventListener("click", ()=>{
+          loadCategoryPlants(element.id)
+         })
 
 
 
@@ -103,6 +115,19 @@ const displayCategories = (arr) => {
     });
 
 }
+
+  const loadCategoryPlants = (id) => {
+    toggleSpinner(true);
+    fetch(`https://openapi.programming-hero.com/api/category/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+               removeActive();
+            const lessonBtn = document.getElementById(`lesson-btn-${id}`)
+            lessonBtn.classList.add("active")
+            displayPlants(data.plants);
+        })
+        .finally(() => toggleSpinner(false));
+  };
 
 
 const loadWordDetail = async (id) => {
