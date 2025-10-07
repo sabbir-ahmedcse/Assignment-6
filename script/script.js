@@ -17,17 +17,17 @@ const displayPlants = (datas) => {
     datas.forEach(element => {
         const cardBtn = document.createElement("div")
         cardBtn.innerHTML = `
-        <div class="card bg-base-100 p-2 space-y-4  shadow-md w-full block">
+        <div class="card bg-base-100 p-2 space-y-4  shadow-md w-full  flex flex-col  h-full min-h-[420px] ">
                 <img src="${element.image}" class="h-40 w-full object-cover rounded-md"/>
                 <div class="  space-y-4">
                     <h2 class="card-title" onclick="loadWordDetail(${element.id})">${element.name}</h2>
-                    <p class="text-justify tracking-normal">${element.description}</p>
+                    <p class="text-justify tracking-normal flex-1">${element.description}</p>
                     <div class="flex justify-between items-center">
                         <p class="bg-amber-50 p-2 rounded-2xl ">${element.category}</p>
                         <span><i class="fa-solid fa-bangladeshi-taka-sign"></i>${element.price}</span>
                     </div>
-                    <div class="card-actions">
-                        <button class="btn text-white bg-green-700 block rounded-3xl w-full button">Add to Card </button>
+                    <div class="card-actions m-auto">
+                        <button class="btn text-white bg-green-700   rounded-3xl w-full button"> Add to Card </button>
                     </div>
                 </div>
             </div>
